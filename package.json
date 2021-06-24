@@ -6,9 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export-static": "next build && next export",
+    "deploy": "yarn export && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.4",
+    "@clerk/clerk-react": "^1.12.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "firebase": "^8.6.8",
+    "framer-motion": "^4",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"

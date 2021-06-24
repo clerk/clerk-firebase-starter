@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Clerk - Firebase example repo
 
-## Getting Started
+<img src="./docs/logo.png" />
 
-First, run the development server:
+This repo shows an example use case for how you can setup Firebase with [Clerk](https://clerk.dev) as a custom authentication provider.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Premium Recipes App
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The **Premium Recipes App** allows only authenticated users to add their favorite recipes on the site to be shared with all other logged in members.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The app is live at https://fir-clerk.web.app/. Check it out!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+<img src="./docs/show.png"/>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Under the hood
 
-## Learn More
+This example app uses:
 
-To learn more about Next.js, take a look at the following resources:
+- [Clerk](https://clerk.dev) as an authentication provider.
+- [Cloud Firestore](https://firebase.google.com/products/firestore) for data storage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Reading the `/recipes` collection is only possible for authenticated users based on Firebase rules.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Where the magic happens
 
-## Deploy on Vercel
+The Clerk integration works by providing a custom authentication token to the Firebase `signInWithCustomToken` auth method. The only thing you need to do on the application level can be seen at [the useRecipes file](./client/hooks/useRecipes.ts#16).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To get a better understanding of the integration, you can check out our [documentation](https://docs.clerk.dev/frontend/integrations/firebase) on the integration.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Running the starter
+
+To run the example locally you need to:
+
+1. Sign up for a Clerk account at http://clerk.dev/.
+2. Setup the required Clerk Frontend API variable from you Clerk project as shown at [the example env file](./.env.example).
+3. Replace the Firebase [configuration file](./config/firebase.web.ts) with you own project settings file.
+4. Check the instructions on how to setup your Firebase project for a similar setup at the specific [setup document](./docs/firebase_setup.md).
+5. `yarn` to install the required dependencies.
+6. `yarn dev` and you are good to go.
+
+## Contact
+
+If you have any specific use case or anything you would like to ask, please reach out!
