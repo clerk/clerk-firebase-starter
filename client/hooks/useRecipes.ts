@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
+
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import type { Recipe } from "../types";
