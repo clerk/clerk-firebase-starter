@@ -615,17 +615,17 @@
   dependencies:
     "@chakra-ui/utils" "1.8.0"
 
-"@clerk/clerk-react@^1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-1.12.0.tgz#74ab0c797ecbb37b955840a0802b5eaab53d29bb"
-  integrity sha512-Ua2G0CjWfP+EH5l760UiPNpClZlyp7b0YwfwfD/pZLwge0cujbi7xnKgNqMNaVYWqn5OIFQAozo0icnvSMH65A==
+"@clerk/clerk-react@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-1.13.0.tgz#a21d16ca9b274c071dc6de1e194f02eea4a3ee46"
+  integrity sha512-TBCnkf481j7a3S7yujbfiX1AVBLysEuPlhC7fsrCUC7foQ+CtS0J2AEsLHtrkpX3vVveHd3PdR8Ba8K7WwvP9w==
   dependencies:
-    "@clerk/types" "1.2.1-staging.1"
+    "@clerk/types" "1.4.0"
 
-"@clerk/types@1.2.1-staging.1":
-  version "1.2.1-staging.1"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.2.1-staging.1.tgz#5e8c8a9013b7ed85263d47e298a7347da33b2737"
-  integrity sha512-TXpSR+hoXr4iDD/0LXCr51XvunWnsYNiUGABZRCUdmCavbRKz0yQhbDota8u3jYOcTh+M/N40iNcNrKT6Put9g==
+"@clerk/types@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-1.4.0.tgz#0a08a58e7ac4b2bb4a78afc0983ba6a8ba3821c6"
+  integrity sha512-0+OHQAYqk6em3iM9XEcSj1TpFgdckKr83yjYWMCPQ9laVAJWDjnc9ugAsXMn8+KObh9S3oUVRexdBjj9SPCjCg==
 
 "@emotion/babel-plugin@^11.3.0":
   version "11.3.0"
