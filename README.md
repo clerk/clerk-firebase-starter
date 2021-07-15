@@ -4,6 +4,8 @@
 
 This repo shows an example use case for how you can setup Firebase with [Clerk](https://clerk.dev) as a custom authentication provider.
 
+[![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-firebase-starter)
+
 ## Premium Recipes App
 
 The **Premium Recipes App** allows only authenticated users to add their favorite recipes on the site to be shared with all other logged in members.
