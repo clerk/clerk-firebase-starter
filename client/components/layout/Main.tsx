@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
-import { useClerk, SignedOut, SignedIn } from "@clerk/clerk-react";
+import { useClerk, SignedOut, SignedIn } from "@clerk/nextjs";
 import { Flex, Heading, Button } from "@chakra-ui/react";
 
 type MainProps = {

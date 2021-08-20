@@ -1,6 +1,5 @@
 import type { AppProps } from "next/app";
-import { ClerkProvider } from "@clerk/clerk-react";
-import { useRouter } from "next/router";
+import { ClerkProvider } from "@clerk/nextjs";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Main } from "../client/components/layout/Main";
 
@@ -14,16 +13,9 @@ if (!firebase.apps.length) {
   firebase.app();
 }
 
-const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
-
 function PremiumRecipesApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
   return (
-    <ClerkProvider
-      frontendApi={clerkFrontendApi}
-      navigate={(to) => router.push(to)}
-    >
+    <ClerkProvider>
       <ChakraProvider theme={defaultTheme}>
         <Main>
           <Component {...pageProps} />
