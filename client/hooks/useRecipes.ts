@@ -1,12 +1,12 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-import { useUser } from "@clerk/nextjs";
+import {useAuth} from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 import type { Recipe } from "../types";
 
 export const useRecipes = () => {
-  const clerkUser = useUser();
+  const { getToken } = useAuth();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [error, setError] = useState(null);
 
@@ -15,7 +15,7 @@ export const useRecipes = () => {
   useEffect(() => {
     const retrieveRecipes = async function () {
       try {
-        const firebaseToken = await clerkUser.getToken("firebase");
+        const firebaseToken = await getToken({template: 'integration_firebase'});
         await firebase.auth().signInWithCustomToken(firebaseToken);
 
         const tempRecipes: Recipe[] = [];
@@ -24,7 +24,7 @@ export const useRecipes = () => {
           tempRecipes.push(recipe.data() as Recipe);
         });
         setRecipes(tempRecipes);
-      } catch (err) {
+      } catch (err: any) {
         setError(err);
       }
     };

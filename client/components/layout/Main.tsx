@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
-import { useClerk, SignedOut, SignedIn } from "@clerk/nextjs";
+import {useClerk, SignedOut, SignedIn, useAuth} from "@clerk/nextjs";
 import { Flex, Heading, Button } from "@chakra-ui/react";
 
 type MainProps = {
@@ -58,7 +58,7 @@ export function Main({ children }: MainProps) {
 }
 
 const SignOutButton = () => {
-  const { signOut } = useClerk();
+  const {signOut} = useAuth();
   const signOutAll = async () =>
     await Promise.all([signOut(), firebase.auth().signOut()]);
 

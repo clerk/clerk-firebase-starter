@@ -15,7 +15,7 @@ if (!firebase.apps.length) {
 
 function PremiumRecipesApp({ Component, pageProps }: AppProps) {
   return (
-    <ClerkProvider>
+    <ClerkProvider {...pageProps}>
       <ChakraProvider theme={defaultTheme}>
         <Main>
           <Component {...pageProps} />
