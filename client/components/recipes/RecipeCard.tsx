@@ -16,23 +16,9 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           </Text>
         </Box>
 
-        <Image
-          h={48}
-          w="full"
-          fit="cover"
-          mt={2}
-          src={recipe.imageUrl}
-          alt={recipe.title}
-        />
+        <Image h={48} w="full" fit="cover" mt={2} src={recipe.imageUrl} alt={recipe.title} />
 
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
-          px={4}
-          py={2}
-          bg="gray.900"
-          roundedBottom="lg"
-        >
+        <Flex alignItems="center" justifyContent="space-between" px={4} py={2} bg="gray.900" roundedBottom="lg">
           <Heading color="white" fontWeight="bold" fontSize="lg">
             Cooking time: {recipe.cookingTimeMin} min!
           </Heading>
