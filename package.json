@@ -8,11 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "export-static": "next build && next export",
-    "deploy": "yarn run export-static && firebase deploy --only hosting"
+    "deploy": "npm run export-static && firebase deploy --only hosting"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.4",
-    "@clerk/nextjs": "next",
+    "@clerk/nextjs": "^3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "firebase": "^8.6.8",

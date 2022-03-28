@@ -16,8 +16,12 @@ export const useRecipes = () => {
     const retrieveRecipes = async function () {
       try {
         const firebaseToken = await getToken({ template: "integration_firebase" });
-        await firebase.auth().signInWithCustomToken(firebaseToken);
 
+        if (!firebaseToken) {
+          return;
+        }
+
+        await firebase.auth().signInWithCustomToken(firebaseToken);
         const tempRecipes: Recipe[] = [];
         const recipesSnapshot = await db.collection("recipes").get();
         recipesSnapshot.forEach((recipe) => {
